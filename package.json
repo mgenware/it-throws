@@ -1,6 +1,6 @@
 {
   "name": "it-throws",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Wrapper of assert.throws",
   "main": "lib/main.js",
   "types": "lib/main.d.ts",
