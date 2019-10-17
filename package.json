@@ -7,9 +7,6 @@
   "author": "Mgen (https://www.mgenware.com)",
   "homepage": "https://github.com/mgenware/it-throws",
   "bugs": "https://github.com/mgenware/it-throws/issues",
-  "keywords": [
-    "layit"
-  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/mgenware/it-throws.git"
