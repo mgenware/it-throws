@@ -1,9 +1,9 @@
 {
   "name": "it-throws",
-  "version": "0.0.1",
-  "description": "Wrapper of assert.throws",
-  "main": "lib/main.js",
-  "types": "lib/main.d.ts",
+  "version": "0.0.0",
+  "description": "Wrapper around assert.throws",
+  "main": "dist/main.js",
+  "types": "dist/main.d.ts",
   "author": "Mgen (https://www.mgenware.com)",
   "homepage": "https://github.com/mgenware/it-throws",
   "bugs": "https://github.com/mgenware/it-throws/issues",
@@ -16,14 +16,27 @@
   },
   "license": "MIT",
   "scripts": {
-    "test": "mocha tests/**/*.test.js",
-    "prepublishOnly": "yarn run test"
+    "test": "yarn run clean && yarn run compile && yarn run lint && yarn run t",
+    "t": "mocha dist_tests/**/*.test.js",
+    "build": "cross-env NODE_ENV=production yarn test",
+    "compile": "tsc -b tests",
+    "dev": "cross-env NODE_ENV=development yarn run clean && tsc -b tests -w",
+    "prepublishOnly": "yarn run test",
+    "lint": "eslint --ext .ts src/ tests/",
+    "clean": "del-cli dist && del-cli dist_tests"
   },
   "engines": {
     "node": ">=8.0.0"
   },
   "devDependencies": {
+    "@types/mocha": "^5.2.7",
+    "@types/node": "^12.11.1",
+    "@typescript-eslint/eslint-plugin": "^2.4.0",
+    "@typescript-eslint/parser": "^2.4.0",
+    "cross-env": "^6.0.3",
+    "del-cli": "^3.0.0",
     "eslint": "^6.5.1",
-    "mocha": "^6.2.1"
+    "mocha": "^6.2.1",
+    "typescript": "^3.6.4"
   }
 }
