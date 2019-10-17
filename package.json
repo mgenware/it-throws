@@ -1,0 +1,29 @@
+{
+  "name": "it-throws",
+  "version": "0.0.0",
+  "description": "Wrapper of assert.throws",
+  "main": "lib/main.js",
+  "types": "lib/main.d.ts",
+  "author": "Mgen (https://www.mgenware.com)",
+  "homepage": "https://github.com/mgenware/it-throws",
+  "bugs": "https://github.com/mgenware/it-throws/issues",
+  "keywords": [
+    "layit"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mgenware/it-throws.git"
+  },
+  "license": "MIT",
+  "scripts": {
+    "test": "mocha tests/**/*.test.js",
+    "prepublishOnly": "yarn run test"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^6.5.1",
+    "mocha": "^6.2.1"
+  }
+}
