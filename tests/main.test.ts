@@ -1,4 +1,4 @@
-import { itThrows, itRejects } from '../';
+import itThrows from '../';
 
 it('Throw', () => {
   itThrows(() => {
@@ -7,7 +7,7 @@ it('Throw', () => {
 });
 
 it('Reject', () => {
-  itRejects(async () => {
+  itThrows(async () => {
     throw new Error('foo');
   }, 'foo');
 });

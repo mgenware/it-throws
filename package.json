@@ -1,7 +1,7 @@
 {
   "name": "it-throws",
   "version": "2.0.0",
-  "description": "Wrapper around assert.throws",
+  "description": "Wrapper around `assert.rejects`",
   "main": "dist/main.js",
   "types": "dist/main.d.ts",
   "author": "Mgen (https://www.mgenware.com)",
