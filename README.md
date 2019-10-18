@@ -15,10 +15,16 @@ yarn add it-throws -D
 ### Usage
 
 ```js
-import itThrows from 'it-throws';
+import { itThrows, itRejects } from 'it-throws';
 
 it('Throw', () => {
   itThrows(() => {
+    throw new Error('foo');
+  }, 'foo');
+});
+
+it('Reject', () => {
+  itRejects(async () => {
     throw new Error('foo');
   }, 'foo');
 });
@@ -32,6 +38,17 @@ import * as assert from 'assert';
 it('Throw', () => {
   assert.throws(
     () => {
+      throw new Error('foo');
+    },
+    {
+      message: 'foo',
+    },
+  );
+});
+
+it('Reject', () => {
+  assert.rejects(
+    async () => {
       throw new Error('foo');
     },
     {
