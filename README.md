@@ -4,7 +4,7 @@
 [![npm version](https://img.shields.io/npm/v/it-throws.svg?style=flat-square)](https://npmjs.com/package/it-throws)
 [![Node.js Version](http://img.shields.io/node/v/it-throws.svg?style=flat-square)](https://nodejs.org/en/)
 
-A wrapper around Node.js `assert.throws`.
+Wrapper around `assert.throws` and `assert.rejects`.
 
 ### Installation
 
@@ -17,16 +17,14 @@ yarn add it-throws -D
 ```js
 import { itThrows, itRejects } from 'it-throws';
 
-it('Throw', () => {
+it('Throws', () => {
   itThrows(() => {
     throw new Error('foo');
   }, 'foo');
 });
 
-it('Reject', () => {
-  itRejects(async () => {
-    throw new Error('foo');
-  }, 'foo');
+it('Rejects', async () => {
+  await itRejects(Promise.reject(new Error('foo')), 'foo');
 });
 ```
 
@@ -35,7 +33,7 @@ Is equivalent to:
 ```js
 import * as assert from 'assert';
 
-it('Throw', () => {
+it('Throws', () => {
   assert.throws(
     () => {
       throw new Error('foo');
@@ -46,14 +44,9 @@ it('Throw', () => {
   );
 });
 
-it('Reject', () => {
-  assert.rejects(
-    async () => {
-      throw new Error('foo');
-    },
-    {
-      message: 'foo',
-    },
-  );
+it('Rejects', async () => {
+  await assert.rejects(Promise.reject(new Error('foo')), {
+    message: 'foo',
+  });
 });
 ```

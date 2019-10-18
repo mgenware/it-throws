@@ -7,6 +7,6 @@ export function itThrows(block: () => any, message: string): void {
 export function itRejects(
   block: (() => Promise<any>) | Promise<any>,
   message: string,
-): void {
-  assert.rejects(block, { message });
+): Promise<any> {
+  return assert.rejects(block, { message });
 }

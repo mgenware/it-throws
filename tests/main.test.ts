@@ -1,13 +1,11 @@
 import { itThrows, itRejects } from '../';
 
-it('Throw', () => {
+it('Throws', () => {
   itThrows(() => {
     throw new Error('foo');
   }, 'foo');
 });
 
-it('Reject', () => {
-  itRejects(async () => {
-    throw new Error('foo');
-  }, 'foo');
+it('Rejects', async () => {
+  await itRejects(Promise.reject(new Error('foo')), 'foo');
 });

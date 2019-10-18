@@ -1,7 +1,7 @@
 {
   "name": "it-throws",
   "version": "2.0.0",
-  "description": "Wrapper around assert.throws",
+  "description": "Wrapper around `assert.throws` and `assert.rejects`",
   "main": "dist/main.js",
   "types": "dist/main.d.ts",
   "author": "Mgen (https://www.mgenware.com)",
@@ -14,7 +14,7 @@
   "license": "MIT",
   "scripts": {
     "test": "yarn run clean && yarn run compile && yarn run lint && yarn run t",
-    "t": "mocha dist_tests/**/*.test.js",
+    "t": "mocha --require source-map-support/register dist_tests/**/*.test.js",
     "build": "cross-env NODE_ENV=production yarn test",
     "compile": "tsc -b tests",
     "dev": "cross-env NODE_ENV=development yarn run clean && tsc -b tests -w",
@@ -34,6 +34,7 @@
     "del-cli": "^3.0.0",
     "eslint": "^6.5.1",
     "mocha": "^6.2.1",
+    "source-map-support": "^0.5.13",
     "typescript": "^3.6.4"
   }
 }
