@@ -1,12 +1,12 @@
 import * as assert from 'assert';
 
-export function itThrows(block: () => any, message: string): void {
-  assert.throws(block, { message });
+export function itThrows(block: () => any, message: string | RegExp): void {
+  assert.throws(block, { message } as any);
 }
 
 export function itRejects(
   block: (() => Promise<any>) | Promise<any>,
-  message: string,
+  message: string | RegExp,
 ): Promise<any> {
-  return assert.rejects(block, { message });
+  return assert.rejects(block, { message } as any);
 }
