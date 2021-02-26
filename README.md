@@ -1,6 +1,6 @@
 # it-throws
 
-[![Build Status](https://img.shields.io/travis/mgenware/it-throws.svg?style=flat-square&label=Build+Status)](https://travis-ci.org/mgenware/it-throws)
+[![Build Status](https://github.com/mgenware/it-throws/workflows/Build/badge.svg)](https://github.com/mgenware/it-throws/actions)
 [![npm version](https://img.shields.io/npm/v/it-throws.svg?style=flat-square)](https://npmjs.com/package/it-throws)
 [![Node.js Version](http://img.shields.io/node/v/it-throws.svg?style=flat-square)](https://nodejs.org/en/)
 

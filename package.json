@@ -2,44 +2,44 @@
   "name": "it-throws",
   "version": "3.2.1",
   "description": "Wrapper around `assert.throws` and `assert.rejects`",
-  "main": "dist/main.js",
-  "types": "dist/main.d.ts",
-  "author": "Mgen (https://www.mgenware.com)",
+  "type": "module",
+  "exports": "./dist/main.js",
+  "types": "./dist/main.d.ts",
+  "author": "Mgenware (https://github.com/mgenware)",
   "homepage": "https://github.com/mgenware/it-throws",
   "bugs": "https://github.com/mgenware/it-throws/issues",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mgenware/it-throws.git"
+    "url": "https://github.com/mgenware/it-throws"
   },
   "license": "MIT",
   "scripts": {
-    "test": "yarn run clean && yarn run compile && yarn run lint && yarn run t",
-    "t": "mocha --require source-map-support/register dist_tests/**/*.test.js",
-    "build": "cross-env NODE_ENV=production yarn test",
-    "compile": "tsc -b tests",
-    "dev": "cross-env NODE_ENV=development yarn run clean && tsc -b tests -w",
-    "prepublishOnly": "yarn run test",
-    "lint": "eslint --max-warnings 0 --ext .ts src/ tests/",
-    "clean": "del-cli dist && del-cli dist_tests"
+    "r": "daizong",
+    "test": "daizong build"
   },
   "engines": {
-    "node": ">=10.0.0"
+    "node": ">=14.0.0"
   },
   "files": [
-    "/dist/**/*.js",
-    "/dist/**/*.ts",
-    "/dist/**/*.map"
+    "dist/**/*.js",
+    "dist/**/*.ts",
+    "dist/**/*.html",
+    "dist/**/*.css",
+    "dist/**/*.map"
   ],
   "devDependencies": {
-    "@types/mocha": "^5.2.7",
-    "@types/node": "^12.12.14",
-    "@typescript-eslint/eslint-plugin": "^2.10.0",
-    "@typescript-eslint/parser": "^2.10.0",
-    "cross-env": "^6.0.3",
-    "del-cli": "^3.0.0",
-    "eslint": "^6.7.2",
-    "mocha": "^6.2.2",
-    "source-map-support": "^0.5.16",
-    "typescript": "^3.7.3"
+    "@types/mocha": "^8.2.1",
+    "@types/node": "^14.14.31",
+    "@typescript-eslint/eslint-plugin": "^4.15.2",
+    "@typescript-eslint/parser": "^4.15.2",
+    "daizong": "^0.13.0",
+    "eslint": "^7.20.0",
+    "eslint-config-airbnb-typescript-lite": "^12.0.0",
+    "eslint-config-mgenware": "^0.0.5",
+    "eslint-plugin-import": "^2.22.1",
+    "mgenware-tsconfig-node": "^14.0.2",
+    "mocha": "^8.3.0",
+    "source-map-support": "^0.5.19",
+    "typescript": "^4.2.2"
   }
 }

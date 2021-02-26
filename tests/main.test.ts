@@ -1,4 +1,4 @@
-import { itThrows, itRejects } from '../';
+import { itThrows, itRejects } from '../dist/main.js';
 
 it('Throws', () => {
   itThrows(() => {

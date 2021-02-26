@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import * as assert from 'assert';
 
 export function itThrows(block: () => any, message: string | RegExp): void {
