@@ -1,6 +1,6 @@
 {
   "name": "it-throws",
-  "version": "4.0.0",
+  "version": "4.1.0",
   "description": "Wrapper around `assert.throws` and `assert.rejects`",
   "type": "module",
   "exports": "./dist/main.js",
