@@ -1,13 +1,12 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import * as assert from 'assert';
 
-export function itThrows(block: () => any, message: string | RegExp): void {
-  assert.throws(block, { message } as any);
+export function itThrows(block: () => unknown, message: string | RegExp): void {
+  assert.throws(block, { message });
 }
 
 export function itRejects(
-  block: (() => Promise<any>) | Promise<any>,
+  block: (() => Promise<unknown>) | Promise<unknown>,
   message: string | RegExp,
-): Promise<any> {
-  return assert.rejects(block, { message } as any);
+): Promise<void> {
+  return assert.rejects(block, { message });
 }
